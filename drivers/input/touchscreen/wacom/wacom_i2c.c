@@ -170,8 +170,8 @@ static void wacom_i2c_disable(struct wacom_i2c *wac_i2c)
 
 		/* release pen, if it is pressed */
 		if (wac_i2c->pen_pressed || wac_i2c->side_pressed
-			|| wac_i2c->pen_prox)
-			forced_release(wac_i2c);
+		|| wac_i2c->pen_prox)
+		forced_release(wac_i2c);
 
 			wac_i2c->wac_pdata->wacom_stop(wac_i2c);
 	}

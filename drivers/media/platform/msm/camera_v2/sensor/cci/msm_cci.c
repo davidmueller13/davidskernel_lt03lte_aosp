@@ -124,7 +124,7 @@ static void msm_cci_flush_queue(struct cci_device *cci_dev,
             msm_camera_io_w(CCI_M0_RESET_RMSK,
                 cci_dev->base + CCI_RESET_CMD_ADDR);
         else
-            msm_camera_io_w(CCI_M1_RESET_RMSK,
+        msm_camera_io_w(CCI_M1_RESET_RMSK,
                 cci_dev->base + CCI_RESET_CMD_ADDR);
             /* wait for reset done irq */
             rc = wait_for_completion_interruptible_timeout(

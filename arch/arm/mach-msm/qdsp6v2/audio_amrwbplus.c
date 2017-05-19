@@ -100,7 +100,7 @@ static long audio_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 			audio->ac->session,
 			audio->enabled);
 		if (audio->stopped == 1)
-			audio->stopped = 0;
+		audio->stopped = 0;
 			break;
 		}
 	case AUDIO_GET_AMRWBPLUS_CONFIG_V2: {

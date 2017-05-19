@@ -1117,7 +1117,7 @@ static int wacom_flash_write(struct wacom_i2c *wac_i2c,
 			unsigned long start_address, unsigned long *max_address)
 {
 	unsigned long ulAddress;
-	bool ret;
+	int ret;
 	int i;
 	unsigned long pageNo = 0;
 	u8 command_id = 0;

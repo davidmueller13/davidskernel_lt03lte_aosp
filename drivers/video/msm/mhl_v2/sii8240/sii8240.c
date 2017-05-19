@@ -444,7 +444,7 @@ static int tmds_control(struct sii8240_data *sii8240, bool tmds_on)
 		return ret;
 	}
 
-	switch (tmds_on) {
+	switch ((int)tmds_on) {
 	case true:
 #ifdef SFEATURE_HDCP_SUPPORT
 		ret = mhl_read_byte_reg(tpi, 0x1A, &value);
@@ -5288,27 +5288,6 @@ static int __devexit sii8240_cbus_remove(struct i2c_client *client)
 {
 	return 0;
 }
-
-static const struct i2c_device_id sii8240_tmds_id[] = {
-	{"sii8240_tmds", 0},
-	{}
-};
-static const struct i2c_device_id sii8240_hdmi_id[] = {
-	{"sii8240_hdmi", 0},
-	{}
-};
-static const struct i2c_device_id sii8240_disc_id[] = {
-	{"sii8240_disc", 0},
-	{}
-};
-static const struct i2c_device_id sii8240_tpi_id[] = {
-	{"sii8240_tpi", 0},
-	{}
-};
-static const struct i2c_device_id sii8240_cbus_id[] = {
-	{"sii8240_cbus", 0},
-	{}
-};
 
 MODULE_DEVICE_TABLE(i2c, sii8240_tmds_id);
 MODULE_DEVICE_TABLE(i2c, sii8240_hdmi_id);

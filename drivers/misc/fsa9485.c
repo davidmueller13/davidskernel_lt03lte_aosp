@@ -1252,7 +1252,7 @@ static int fsa9485_detect_dev(struct fsa9485_usbsw *usbsw)
 			if (usbsw->is_factory_start) {
 #endif
 				if (pdata->dock_cb)
-					pdata->dock_cb(FSA9485_DETACHED_DOCK);
+				pdata->dock_cb(FSA9485_DETACHED_DOCK);
 					ret = i2c_smbus_read_byte_data(client,
 						FSA9485_REG_CTRL);
 					if (ret < 0)

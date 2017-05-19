@@ -464,8 +464,8 @@ int ghsuart_ctrl_setup(unsigned int num_ports, enum gadget_type gtype)
 		num_ctrl_ports++;
 		ret = ghsuart_ctrl_port_alloc(i, gtype);
 		if (ret) {
-			num_ctrl_ports--;
-			pr_err("%s: Unable to alloc port:%d\n", __func__, i);
+		num_ctrl_ports--;
+		pr_err("%s: Unable to alloc port:%d\n", __func__, i);
 			goto free_ports;
 		}
 	}
@@ -474,8 +474,8 @@ int ghsuart_ctrl_setup(unsigned int num_ports, enum gadget_type gtype)
 
 free_ports:
 	for (i = first_port_id; i < num_ctrl_ports; i++)
-		ghsuart_ctrl_port_free(i);
-		num_ctrl_ports = first_port_id;
+	ghsuart_ctrl_port_free(i);
+	num_ctrl_ports = first_port_id;
 	return ret;
 }
 

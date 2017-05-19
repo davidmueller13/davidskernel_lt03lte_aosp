@@ -8713,7 +8713,7 @@ dhd_bus_devreset(dhd_pub_t *dhdp, uint8 flag)
 				} else
 					bcmerror = BCME_SDIO_ERROR;
 			} else
-				bcmerror = BCME_SDIO_ERROR;
+			bcmerror = BCME_SDIO_ERROR;
 
 				dhd_os_sdunlock(dhdp);
 		} else {
