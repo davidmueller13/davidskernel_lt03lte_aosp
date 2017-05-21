@@ -520,3 +520,4 @@ endif
 obj-$(CONFIG_GSM_MODEM_SPRD6500) += board-sprd6500-spi.o board-sprd6500-modems.o
 
 obj-$(CONFIG_ASMP)         += autosmp.o
+obj-$(CONFIG_ARM_AUTO_HOTPLUG)	+= auto_hotplug.o
