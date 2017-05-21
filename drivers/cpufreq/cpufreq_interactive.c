@@ -212,6 +212,22 @@ struct cpufreq_governor cpufreq_gov_interactive = {
 	.owner = THIS_MODULE,
 };
 
+#ifdef DYN_DEFER
+static inline void timer_set_nondeferrable(struct timer_list *timer)
+{
+       timer->base =
+               ((struct tvec_base *)((unsigned long)timer->base &
+                       ~TBASE_DEFERRABLE_FLAG));
+}
+
+static inline void timer_set_deferrable(struct timer_list *timer)
+{
+       timer->base =
+               ((struct tvec_base *)((unsigned long)timer->base |
+                       TBASE_DEFERRABLE_FLAG));
+}
+#endif
+
 static void cpufreq_interactive_timer_resched(
 	struct cpufreq_interactive_cpuinfo *pcpu)
 {
