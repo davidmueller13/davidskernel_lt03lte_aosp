@@ -146,6 +146,10 @@ config CPU_FREQ_DEFAULT_GOV_SMARTMAX
 	help
 	  Use smartmax as the default CPU governor.
 
+config CPU_FREQ_DEFAULT_GOV_HYPER
+ 	bool "hyper"
+ 	select CPU_FREQ_GOV_HYPER
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -281,6 +285,12 @@ config CPU_FREQ_GOV_SMARTMAX
 	depends on CPU_FREQ
 	help
 	  'smartmax' CPU governor.
+
+config CPU_FREQ_GOV_HYPER
+ 	tristate "'hyper' cpufreq governor"
+ 	depends on CPU_FREQ
+ 	---help---
+ 	  'hyper' - A tweaked "ondemand" based smart and smooth optimized governor!
 
 menu "x86 CPU frequency scaling drivers"
 depends on X86
