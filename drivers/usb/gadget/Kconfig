@@ -921,14 +921,6 @@ config USB_LOCK_SUPPORT_FOR_MDM
 	  USB is not connected to the work in office.
 	  Of employees who have installed MDM(SDS).
 
-config USB_ANDROID_HID_GADGET
-	boolean "HID Gadget"
-	depends on USB_G_ANDROID
-	help
-	  The HID Gadget acts as both a USB Keyboard and USB Mouse
-	  device. It allows the android device to send key strokes
-	  or mouse movement commands to the connected host.
-
 config USB_NCM_SUPPORT_MTU_CHANGE
 	boolean "Samsung NCM MTU Change function"
 	depends on USB_G_ANDROID
